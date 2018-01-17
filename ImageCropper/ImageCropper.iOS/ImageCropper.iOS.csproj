@@ -55,6 +55,8 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Platform.cs" />
+    <Compile Include="ImageCropperImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +71,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\sample1.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\sample1.imageset\Photo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

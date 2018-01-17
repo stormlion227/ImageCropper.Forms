@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Test"
              x:Class="Test.MainPage">
-
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     >
+            <Button Text="Show"
+                    Clicked="OnClickedShow"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>
