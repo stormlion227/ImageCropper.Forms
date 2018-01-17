@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Stormlion.ImageCropper</AssemblyName>
+    <RootNamespace>Stormlion.ImageCropper</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
