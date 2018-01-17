@@ -7,13 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Android", "Test\Test.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.iOS", "Test\Test.iOS\Test.iOS.csproj", "{5AE225C1-20C1-444A-ABD7-547965282F49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test\Test.csproj", "{7B7692F4-D2C1-4FE8-B4EB-33C2E25E7C44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test\Test.csproj", "{7B7692F4-D2C1-4FE8-B4EB-33C2E25E7C44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageCropper", "ImageCropper\ImageCropper\ImageCropper.csproj", "{A1F85289-D18B-4183-9D62-EBAC6DE9E898}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageCropper", "ImageCropper\ImageCropper\ImageCropper.csproj", "{A1F85289-D18B-4183-9D62-EBAC6DE9E898}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageCropper.Android", "ImageCropper\ImageCropper.Android\ImageCropper.Android.csproj", "{8EFE7DB3-1826-46CC-8012-8FD0BF156E27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageCropper.iOS", "ImageCropper\ImageCropper.iOS\ImageCropper.iOS.csproj", "{30094A60-F54E-4F93-8E14-2457EF5BD4CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TOCropViewController", "Binding\TOCropViewController\TOCropViewController.csproj", "{C5DCB26A-02D0-4D8B-878E-C9169915C22A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +185,30 @@ Global
 		{30094A60-F54E-4F93-8E14-2457EF5BD4CE}.Release|iPhone.Build.0 = Release|Any CPU
 		{30094A60-F54E-4F93-8E14-2457EF5BD4CE}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{30094A60-F54E-4F93-8E14-2457EF5BD4CE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.AppStore|iPhoneSimulator.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Release|iPhone.Build.0 = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C5DCB26A-02D0-4D8B-878E-C9169915C22A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
