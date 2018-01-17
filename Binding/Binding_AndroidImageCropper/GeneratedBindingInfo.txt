@@ -1,0 +1,17 @@
+Binding for:
+com.theartofdev.edmodo:android-image-cropper:2.5.1
+
+Dependencies:
+
+android-image-cropper-2.5.1.aar,    Path=C:\Users\roths\.gradle\caches\modules-2\files-2.1\com.theartofdev.edmodo\android-image-cropper\2.5.1\d4d9bd48ecad5f49a4d33134610eab7b3044af67\android-image-cropper-2.5.1.aar
+	animated-vector-drawable-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\animated-vector-drawable\26.0.0-alpha1\animated-vector-drawable-26.0.0-alpha1.aar
+	appcompat-v7-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\appcompat-v7\26.0.0-alpha1\appcompat-v7-26.0.0-alpha1.aar
+	exifinterface-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\exifinterface\26.0.0-alpha1\exifinterface-26.0.0-alpha1.aar
+	support-annotations-26.0.0-alpha1.jar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar
+	support-compat-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-compat\26.0.0-alpha1\support-compat-26.0.0-alpha1.aar
+	support-core-ui-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-core-ui\26.0.0-alpha1\support-core-ui-26.0.0-alpha1.aar
+	support-core-utils-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-core-utils\26.0.0-alpha1\support-core-utils-26.0.0-alpha1.aar
+	support-fragment-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-fragment\26.0.0-alpha1\support-fragment-26.0.0-alpha1.aar
+	support-media-compat-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-media-compat\26.0.0-alpha1\support-media-compat-26.0.0-alpha1.aar
+	support-v4-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-v4\26.0.0-alpha1\support-v4-26.0.0-alpha1.aar
+	support-vector-drawable-26.0.0-alpha1.aar,    Path=C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-vector-drawable\26.0.0-alpha1\support-vector-drawable-26.0.0-alpha1.aar
