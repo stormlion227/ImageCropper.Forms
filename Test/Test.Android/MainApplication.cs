@@ -13,6 +13,7 @@ using Plugin.CurrentActivity;
 
 namespace Test.Droid
 {
+    [Application]
     public class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {
         public MainApplication(IntPtr handle, JniHandleOwnership transfer) : base(handle, transfer)

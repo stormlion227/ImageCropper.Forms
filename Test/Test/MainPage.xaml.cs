@@ -24,7 +24,7 @@ namespace Test
         protected async void OnClickedShow(object sender, EventArgs e)
         {
             //TakePicture();
-            ImageCropper.Show();
+            ImageCropper.Current.Show(this);
         }
 
         private async Task TakePicture()

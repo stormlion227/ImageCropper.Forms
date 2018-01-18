@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Plugin.Media.Abstractions;
 
 namespace Stormlion.ImageCropper
 {
     public interface IImageCropperWrapper
     {
-        void Show();
+        void ShowFromFile(string imageFile);
     }
 }
