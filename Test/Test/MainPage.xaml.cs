@@ -24,7 +24,13 @@ namespace Test
         protected async void OnClickedShow(object sender, EventArgs e)
         {
             //TakePicture();
-            ImageCropper.Current.Show(this);
+            ImageCropper.Current.Show(this, null, (s) => {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    imageView.Source = ImageSource.FromFile(s);
+                    Debug.WriteLine(s);
+                });
+            });
         }
 
         private async Task TakePicture()

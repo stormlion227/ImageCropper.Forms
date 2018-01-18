@@ -10,6 +10,10 @@
             <Button Text="Show"
                     Clicked="OnClickedShow"
                     />
+            <Image x:Name="imageView"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   />
         </StackLayout>
     </ContentPage.Content>
 

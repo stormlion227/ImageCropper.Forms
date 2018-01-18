@@ -1,5 +1,6 @@
 ﻿using Plugin.Media;
 using Plugin.Media.Abstractions;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -15,8 +16,15 @@ namespace Stormlion.ImageCropper
 
         public string PhotoLibraryTitle { get; set; } = "Photo Library";
 
-        public async void Show(Page page, string imageFile = null)
+        public Action<string> Success { get; set; }
+
+        public Action Faiure { get; set; }
+
+        public async void Show(Page page, string imageFile = null, Action<string> success = null, Action failure = null)
         {
+            Success = success;
+            Faiure = failure;
+
             if(imageFile == null)
             {
                 await CrossMedia.Current.Initialize();
@@ -28,7 +36,8 @@ namespace Stormlion.ImageCropper
                 {
                     if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                     {
-                        page.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                        await page.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                        Faiure?.Invoke();
                         return;
                     }
 
@@ -38,7 +47,8 @@ namespace Stormlion.ImageCropper
                 {
                     if(!CrossMedia.Current.IsPickPhotoSupported)
                     {
-                        page.DisplayAlert("Error", "This device is not supported to pick photo.", "OK");
+                        await page.DisplayAlert("Error", "This device is not supported to pick photo.", "OK");
+                        Faiure?.Invoke();
                         return;
                     }
 
@@ -46,11 +56,13 @@ namespace Stormlion.ImageCropper
                 }
                 else
                 {
+                    Faiure?.Invoke();
                     return;
                 }
 
                 if (file == null)
                 {
+                    Faiure?.Invoke();
                     return;
                 }
 

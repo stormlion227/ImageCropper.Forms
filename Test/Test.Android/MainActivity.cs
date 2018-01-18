@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Stormlion.ImageCropper.Droid;
 using Plugin.Permissions;
+using Android.Content;
 
 namespace Test.Droid
 {
@@ -30,6 +31,13 @@ namespace Test.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            Platform.OnActivityResult(requestCode, resultCode, data);
         }
     }
 }
