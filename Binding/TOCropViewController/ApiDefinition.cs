@@ -367,7 +367,7 @@ namespace Bind_TOCropViewController
     }
 
     // @protocol TOCropViewControllerDelegate <NSObject>
-    [Protocol, Model]
+    [Model]
     [BaseType(typeof(NSObject))]
     interface TOCropViewControllerDelegate
     {
