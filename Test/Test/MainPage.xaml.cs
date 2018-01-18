@@ -29,6 +29,7 @@ namespace Test
 
         private async Task TakePicture()
         {
+            /*
             try
             {
                 var mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
@@ -48,6 +49,7 @@ namespace Test
             {
                 Debug.WriteLine(ex.Message);
             }
+            */
         }
 
         private void Refresh()
