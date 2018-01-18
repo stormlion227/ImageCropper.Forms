@@ -12,24 +12,18 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(ImageCropperImplementation))]
 namespace Stormlion.ImageCropper.iOS
 {
-    public class ImageCropperImplementation : IImageCropperWrapper
+    public class ImageCropperImplementation : TOCropViewControllerDelegate, IImageCropperWrapper 
     {
-        protected static ImageCropperDelegate imageCropperDelegate = new ImageCropperDelegate();
-
         public void ShowFromFile(string imageFile)
         {
             UIImage image = UIImage.FromFile(imageFile);
             
             TOCropViewController cropViewController = new TOCropViewController(image);
-            cropViewController.Delegate = imageCropperDelegate;
+            cropViewController.Delegate = this;
 
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(cropViewController, true, null);
         }
 
-    }
-
-    public class ImageCropperDelegate : TOCropViewControllerDelegate
-    {
         public override void DidCropToImage(TOCropViewController cropViewController, UIImage image, CGRect cropRect, nint angle)
         {
             Finalize(image);
