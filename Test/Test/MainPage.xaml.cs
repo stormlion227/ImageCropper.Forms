@@ -23,7 +23,13 @@ namespace Test
 
         protected async void OnClickedShow(object sender, EventArgs e)
         {
-            //TakePicture();
+            ImageCropper.Current.PageTitle = "Test Title";
+
+            ImageCropper.Current.CropShape = ImageCropper.CropShapeType.Oval;
+
+            ImageCropper.Current.AspectRatioX = 2;
+            ImageCropper.Current.AspectRatioY = 3;
+            
             ImageCropper.Current.Show(this, null, (s) => {
                 Device.BeginInvokeOnMainThread(() =>
                 {
@@ -32,35 +38,5 @@ namespace Test
                 });
             });
         }
-
-        private async Task TakePicture()
-        {
-            /*
-            try
-            {
-                var mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                {
-                    DefaultCamera = CameraDevice.Front
-                });
-
-                //_imageSource = ImageSource.FromStream(mediaFile.GetStream);
-
-                var memoryStream = new MemoryStream();
-                await mediaFile.GetStream().CopyToAsync(memoryStream);
-                byte[] imageAsByte = memoryStream.ToArray();
-
-                await Navigation.PushModalAsync(new ImageCropperPage(imageAsByte, Refresh));
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-            */
-        }
-
-        private void Refresh()
-        {
-        }
-
     }
 }

@@ -12,32 +12,54 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(ImageCropperImplementation))]
 namespace Stormlion.ImageCropper.iOS
 {
-    public class ImageCropperImplementation : TOCropViewControllerDelegate, IImageCropperWrapper 
+    public class ImageCropperImplementation : IImageCropperWrapper 
     {
         public void ShowFromFile(string imageFile)
         {
             UIImage image = UIImage.FromFile(imageFile);
-            
-            TOCropViewController cropViewController = new TOCropViewController(image);
-            cropViewController.Delegate = this;
+
+            TOCropViewController cropViewController;
+
+            if(ImageCropper.Current.CropShape == ImageCropper.CropShapeType.Oval)
+            {
+                cropViewController = new TOCropViewController(TOCropViewCroppingStyle.Circular, image);
+            }
+            else
+            {
+                cropViewController = new TOCropViewController(image);
+            }
+
+            if(ImageCropper.Current.AspectRatioX > 0 && ImageCropper.Current.AspectRatioY > 0)
+            {
+                cropViewController.AspectRatioPreset = TOCropViewControllerAspectRatioPreset.Custom;
+                cropViewController.CustomAspectRatio = new CGSize(ImageCropper.Current.AspectRatioX, ImageCropper.Current.AspectRatioY);
+            }
+
+            //cropViewController.Delegate = this;
+
+            cropViewController.OnDidCropToRect = (outImage, cropRect, angle) =>
+            {
+                Finalize(outImage);
+            };
+
+            cropViewController.OnDidCropToCircleImage = (outImage, cropRect, angle) =>
+            {
+                Finalize(outImage);
+            };
+
+            cropViewController.OnDidFinishCancelled = (cancelled) =>
+            {
+                ImageCropper.Current.Faiure?.Invoke();
+                UIApplication.SharedApplication.KeyWindow.RootViewController.DismissViewController(true, null);
+            };
 
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(cropViewController, true, null);
-        }
 
-        public override void DidCropToImage(TOCropViewController cropViewController, UIImage image, CGRect cropRect, nint angle)
-        {
-            Finalize(image);
-        }
-
-        public override void DidCropToCircularImage(TOCropViewController cropViewController, UIImage image, CGRect cropRect, nint angle)
-        {
-            Finalize(image);
-        }
-
-        public override void DidFinishCancelled(TOCropViewController cropViewController, bool cancelled)
-        {
-            ImageCropper.Current.Faiure?.Invoke();
-            UIApplication.SharedApplication.KeyWindow.RootViewController.DismissViewController(true, null);
+            if (!string.IsNullOrWhiteSpace(ImageCropper.Current.PageTitle) && cropViewController.TitleLabel != null)
+            {
+                UILabel titleLabel = cropViewController.TitleLabel;
+                titleLabel.Text = ImageCropper.Current.PageTitle;
+            }
         }
 
         void Finalize(UIImage image)
