@@ -16,6 +16,8 @@ namespace Stormlion.ImageCropper.Droid
 {
     public class ImageCropperPageRenderer : PageRenderer
     {
+        CropImageView cropView;
+
         public ImageCropperPageRenderer(Context context) : base(context)
         {
         }
@@ -24,25 +26,41 @@ namespace Stormlion.ImageCropper.Droid
         {
             base.OnElementChanged(e);
 
-            //Com.Theartofdev.Edmodo.Cropper. v = new CropOverlayView(Context);
-
             ImageCropperPage page = Element as ImageCropperPage;
-            if(page != null)
+            if (page != null)
             {
-                var cropImageView = new CropImageView(Context);
-                cropImageView.LayoutParameters = new LayoutParams(LayoutParams.MatchParent, LayoutParams.MatchParent);
+
+
+                cropView = new CropImageView(Context);
+
+                cropView.LayoutParameters = new LayoutParams(LayoutParams.MatchParent, LayoutParams.MatchParent);
+
                 Bitmap bitmp = BitmapFactory.DecodeByteArray(page.Image, 0, page.Image.Length);
-                cropImageView.SetImageBitmap(bitmp);
 
-                var stackLayout = new StackLayout { Children = { cropImageView } };
+                cropView.SetImageBitmap(bitmp);
 
+                AddView(cropView);
+
+                /*
+
+                Grid grid = new Grid();
+
+                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
+
+                //var stackLayout = new StackLayout { Children = { cropImageView }};
+                grid.Children.Add(cropImageView, 0, 0);
+                
                 var rotateButton = new Xamarin.Forms.Button { Text = "Rotate" };
+
+                rotateButton.VerticalOptions = LayoutOptions.End;
 
                 rotateButton.Clicked += (sender, ex) =>
                 {
                     cropImageView.RotateImage(90);
                 };
-                stackLayout.Children.Add(rotateButton);
+                //stackLayout.Children.Add(rotateButton);
+                grid.Children.Add(rotateButton, 0, 1);
 
                 /*
 
@@ -60,11 +78,21 @@ namespace Stormlion.ImageCropper.Droid
                 };
 
                 stackLayout.Children.Add(finishButton);
+
+                page.Content = grid;
                 */
-
-                page.Content = stackLayout;
             }
-
         }
+
+        protected override void OnLayout(bool changed, int l, int t, int r, int b)
+        {
+            base.OnLayout(changed, l, t, r, b);
+
+            var msw = MeasureSpec.MakeMeasureSpec(r - l, MeasureSpecMode.Exactly);
+            var msh = MeasureSpec.MakeMeasureSpec(b - t, MeasureSpecMode.Exactly);
+            cropView.Measure(msw, msh);
+            cropView.Layout(0, 0, r - l, b - t);
+        }
+
     }
 }

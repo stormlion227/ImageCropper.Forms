@@ -119,7 +119,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImageCropperImpl.cs" />
     <Compile Include="ImageCropperPageRenderer.cs" />
     <Compile Include="Platform.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

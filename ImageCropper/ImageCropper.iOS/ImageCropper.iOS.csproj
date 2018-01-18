@@ -55,8 +55,8 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageCropperRenderer.cs" />
     <Compile Include="Platform.cs" />
-    <Compile Include="ImageCropperImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
