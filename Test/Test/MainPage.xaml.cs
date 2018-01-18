@@ -23,20 +23,20 @@ namespace Test
 
         protected async void OnClickedShow(object sender, EventArgs e)
         {
-            ImageCropper.Current.PageTitle = "Test Title";
-
-            ImageCropper.Current.CropShape = ImageCropper.CropShapeType.Oval;
-
-            ImageCropper.Current.AspectRatioX = 2;
-            ImageCropper.Current.AspectRatioY = 3;
-            
-            ImageCropper.Current.Show(this, null, (s) => {
-                Device.BeginInvokeOnMainThread(() =>
+            new ImageCropper()
+            {
+                PageTitle = "Test Title",
+                AspectRatioX = 1,
+                AspectRatioY = 1,
+                CropShape = ImageCropper.CropShapeType.Oval,
+                Success = (imageFile) =>
                 {
-                    imageView.Source = ImageSource.FromFile(s);
-                    Debug.WriteLine(s);
-                });
-            });
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        imageView.Source = ImageSource.FromFile(imageFile);
+                    });
+                }
+            }.Show(this);
         }
     }
 }

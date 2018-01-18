@@ -10,13 +10,13 @@ namespace Stormlion.ImageCropper.Droid
 {
     public class ImageCropperImplementation : IImageCropperWrapper
     {
-        public void ShowFromFile(string imageFile)
+        public void ShowFromFile(ImageCropper imageCropper, string imageFile)
         {
             try
             {
                 CropImage.ActivityBuilder activityBuilder = CropImage.Activity(Android.Net.Uri.FromFile(new Java.IO.File(imageFile)));
 
-                if(ImageCropper.Current.CropShape == ImageCropper.CropShapeType.Oval)
+                if(imageCropper.CropShape == ImageCropper.CropShapeType.Oval)
                 {
                     activityBuilder.SetCropShape(CropImageView.CropShape.Oval);
                 }
@@ -25,19 +25,19 @@ namespace Stormlion.ImageCropper.Droid
                     activityBuilder.SetCropShape(CropImageView.CropShape.Rectangle);
                 }
 
-                if(ImageCropper.Current.AspectRatioX > 0 && ImageCropper.Current.AspectRatioY > 0)
+                if(imageCropper.AspectRatioX > 0 && imageCropper.AspectRatioY > 0)
                 {
                     activityBuilder.SetFixAspectRatio(true);
-                    activityBuilder.SetAspectRatio(ImageCropper.Current.AspectRatioX, ImageCropper.Current.AspectRatioY);
+                    activityBuilder.SetAspectRatio(imageCropper.AspectRatioX, imageCropper.AspectRatioY);
                 }
                 else
                 {
                     activityBuilder.SetFixAspectRatio(false);
                 }
 
-                if(!string.IsNullOrWhiteSpace(ImageCropper.Current.PageTitle))
+                if(!string.IsNullOrWhiteSpace(imageCropper.PageTitle))
                 {
-                    activityBuilder.SetActivityTitle(ImageCropper.Current.PageTitle);
+                    activityBuilder.SetActivityTitle(imageCropper.PageTitle);
                 }
 
                 activityBuilder.Start(CrossCurrentActivity.Current.Activity);

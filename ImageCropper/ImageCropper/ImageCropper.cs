@@ -8,6 +8,13 @@ namespace Stormlion.ImageCropper
 {
     public class ImageCropper
     {
+        public static ImageCropper Current { get; set; }
+
+        public ImageCropper()
+        {
+            Current = this;
+        }
+
         public enum CropShapeType
         {
             Rectangle,
@@ -22,8 +29,6 @@ namespace Stormlion.ImageCropper
 
         public string PageTitle { get; set; } = null;
 
-        public static ImageCropper Current { get; } = new ImageCropper();
-
         public string SelectSourceTitle { get; set; } = "Select source";
 
         public string TakePhotoTitle { get; set; } = "Take Photo";
@@ -34,11 +39,8 @@ namespace Stormlion.ImageCropper
 
         public Action Faiure { get; set; }
 
-        public async void Show(Page page, string imageFile = null, Action<string> success = null, Action failure = null)
+        public async void Show(Page page, string imageFile = null)
         {
-            Success = success;
-            Faiure = failure;
-
             if(imageFile == null)
             {
                 await CrossMedia.Current.Initialize();
@@ -83,7 +85,7 @@ namespace Stormlion.ImageCropper
                 imageFile = file.Path;
             }
 
-            DependencyService.Get<IImageCropperWrapper>().ShowFromFile(imageFile);
+            DependencyService.Get<IImageCropperWrapper>().ShowFromFile(this, imageFile);
         }
     }
 }

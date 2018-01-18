@@ -14,13 +14,13 @@ namespace Stormlion.ImageCropper.iOS
 {
     public class ImageCropperImplementation : IImageCropperWrapper 
     {
-        public void ShowFromFile(string imageFile)
+        public void ShowFromFile(ImageCropper imageCropper, string imageFile)
         {
             UIImage image = UIImage.FromFile(imageFile);
 
             TOCropViewController cropViewController;
 
-            if(ImageCropper.Current.CropShape == ImageCropper.CropShapeType.Oval)
+            if(imageCropper.CropShape == ImageCropper.CropShapeType.Oval)
             {
                 cropViewController = new TOCropViewController(TOCropViewCroppingStyle.Circular, image);
             }
@@ -29,40 +29,38 @@ namespace Stormlion.ImageCropper.iOS
                 cropViewController = new TOCropViewController(image);
             }
 
-            if(ImageCropper.Current.AspectRatioX > 0 && ImageCropper.Current.AspectRatioY > 0)
+            if(imageCropper.AspectRatioX > 0 && imageCropper.AspectRatioY > 0)
             {
                 cropViewController.AspectRatioPreset = TOCropViewControllerAspectRatioPreset.Custom;
-                cropViewController.CustomAspectRatio = new CGSize(ImageCropper.Current.AspectRatioX, ImageCropper.Current.AspectRatioY);
+                cropViewController.CustomAspectRatio = new CGSize(imageCropper.AspectRatioX, imageCropper.AspectRatioY);
             }
-
-            //cropViewController.Delegate = this;
 
             cropViewController.OnDidCropToRect = (outImage, cropRect, angle) =>
             {
-                Finalize(outImage);
+                Finalize(imageCropper, outImage);
             };
 
             cropViewController.OnDidCropToCircleImage = (outImage, cropRect, angle) =>
             {
-                Finalize(outImage);
+                Finalize(imageCropper, outImage);
             };
 
             cropViewController.OnDidFinishCancelled = (cancelled) =>
             {
-                ImageCropper.Current.Faiure?.Invoke();
+                imageCropper.Faiure?.Invoke();
                 UIApplication.SharedApplication.KeyWindow.RootViewController.DismissViewController(true, null);
             };
 
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(cropViewController, true, null);
 
-            if (!string.IsNullOrWhiteSpace(ImageCropper.Current.PageTitle) && cropViewController.TitleLabel != null)
+            if (!string.IsNullOrWhiteSpace(imageCropper.PageTitle) && cropViewController.TitleLabel != null)
             {
                 UILabel titleLabel = cropViewController.TitleLabel;
-                titleLabel.Text = ImageCropper.Current.PageTitle;
+                titleLabel.Text = imageCropper.PageTitle;
             }
         }
 
-        void Finalize(UIImage image)
+        void Finalize(ImageCropper imageCropper, UIImage image)
         {
             string documentsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string jpgFilename = System.IO.Path.Combine(documentsDirectory, Guid.NewGuid().ToString() + ".jpg");
@@ -71,12 +69,12 @@ namespace Stormlion.ImageCropper.iOS
             if (imgData.Save(jpgFilename, false, out err))
             {
                 Debug.WriteLine("saved as " + jpgFilename);
-                ImageCropper.Current.Success?.Invoke(jpgFilename);
+                imageCropper.Success?.Invoke(jpgFilename);
             }
             else
             {
                 Debug.WriteLine("NOT saved as " + jpgFilename + " because" + err.LocalizedDescription);
-                ImageCropper.Current.Faiure?.Invoke();
+                imageCropper.Faiure?.Invoke();
             }
             UIApplication.SharedApplication.KeyWindow.RootViewController.DismissViewController(true, null);
         }
