@@ -1,6 +1,10 @@
-﻿using Stormlion.ImageCropper;
+﻿using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Stormlion.ImageCropper;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +17,40 @@ namespace Test
 		public MainPage()
 		{
 			InitializeComponent();
-		}
 
-        protected void OnClickedShow(object sender, EventArgs e)
+            CrossMedia.Current.Initialize();
+        }
+
+        protected async void OnClickedShow(object sender, EventArgs e)
         {
-            new ImageCropper()
+            TakePicture();
+        }
+
+        private async Task TakePicture()
+        {
+            try
             {
-                Cropping = ImageCropper.CroppingStyle.Circular
-            }.Show();
+                var mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    DefaultCamera = CameraDevice.Front
+                });
+
+                //_imageSource = ImageSource.FromStream(mediaFile.GetStream);
+
+                var memoryStream = new MemoryStream();
+                await mediaFile.GetStream().CopyToAsync(memoryStream);
+                byte[] imageAsByte = memoryStream.ToArray();
+
+                await Navigation.PushModalAsync(new ImageCropperPage(imageAsByte, Refresh));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private void Refresh()
+        {
         }
 
     }
