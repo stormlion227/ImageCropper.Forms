@@ -34,9 +34,9 @@ Supports Android and iOS.
 In MainActivity.cs file
 
 ```
-	Stormlion.ImageCropper.Droid.Platform.Init();
+    Stormlion.ImageCropper.Droid.Platform.Init();
 
-	global::Xamarin.Forms.Forms.Init(this, bundle);
+    global::Xamarin.Forms.Forms.Init(this, bundle);
 ```
 ```
     protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -52,7 +52,7 @@ In MainActivity.cs file
 In AppDelegate.cs file
 
 ```
-	Stormlion.ImageCropper.iOS.Platform.Init();
+    Stormlion.ImageCropper.iOS.Platform.Init();
 ```
 ## Usage
 
