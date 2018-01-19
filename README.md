@@ -26,10 +26,9 @@ Supports Android, iOS.
 
 ## Usage
 
-Install [Xamarin.Android.Support.Exif](https://www.nuget.org/packages/Xamarin.Android.Support.Exif/) in Android project.
-Install the [nuget package](https://www.nuget.org/packages/ShapeControl.Forms/) in portable and all platform specific projects.
-
-This plugin uses the [MediaPlugin](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md). Be sure to complete the full setup this plugin. Please fully read through the [Current Activity Plugin Documentation](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md).
+* Install [Xamarin.Android.Support.Exif (>=26.0.2)](https://www.nuget.org/packages/Xamarin.Android.Support.Exif/) in Android project.
+* Install the [nuget package](https://www.nuget.org/packages/ShapeControl.Forms/) in portable and all platform specific projects.
+* This plugin uses the [MediaPlugin](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md). Be sure to complete the full setup this plugin. Please fully read through the [Current Activity Plugin Documentation](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md).
 
 #### Android
 
@@ -77,6 +76,7 @@ In AppDelegate.cs file
 * AspectRatioX
 * AspectRatioY
 * CropShape
+* Initial image can be set in Show function.
 
 ## Contributions
 
