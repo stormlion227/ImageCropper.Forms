@@ -27,7 +27,7 @@ namespace Test
             {
 //                PageTitle = "Test Title",
 //                AspectRatioX = 1,
-                //AspectRatioY = 1,
+//                AspectRatioY = 1,
 //                CropShape = ImageCropper.CropShapeType.Oval,
                 Success = (imageFile) =>
                 {
