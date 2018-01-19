@@ -18,10 +18,12 @@ Supports Android and iOS.
 ## Screen-Shots
 
 ### Android
-<img src="ScreenShots/Android.png"/>
+<img src="ScreenShots/Android_Rectangle.gif"/>
+<img src="ScreenShots/Android_Circle.gif"/>
 
 ### iOS
-<img src="ScreenShots/iOS.png"/>
+<img src="ScreenShots/iOS_Rectangle.gif"/>
+<img src="ScreenShots/iOS_Rectangle.gif"/>
 
 ## Usage
 
