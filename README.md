@@ -4,7 +4,7 @@ Xamarin.Forms(.Net Standard) library that allows you to crop and rotate image/ph
 
 [![NuGet](https://img.shields.io/nuget/v/ImageCropper.Forms.svg)](https://www.nuget.org/packages/ImageCropper.Forms/)
 
-Supports Android, iOS.
+Supports Android and iOS.
 * Android library from : https://github.com/ArthurHub/Android-Image-Cropper
 * iOS library from : https://github.com/TimOliver/TOCropViewController
 
@@ -15,14 +15,13 @@ Supports Android, iOS.
 * Aspect ratio.
 * Circle/Rectangle shape.
 
-## Support Platforms
-
-* iOS 8+
-* Android
-
 ## Screen-Shots
 
-<img src="ScreenShots/IMG_0001.png"/>
+### Android
+<img src="ScreenShots/Android.png"/>
+
+### iOS
+<img src="ScreenShots/iOS.png"/>
 
 ## Usage
 
