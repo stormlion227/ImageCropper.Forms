@@ -28,7 +28,7 @@ Supports Android, iOS.
 
 * Install [Xamarin.Android.Support.Exif (>=26.0.2)](https://www.nuget.org/packages/Xamarin.Android.Support.Exif/) in Android project. (I've tried to add this to dependency package in .nuspec file, but I had some trouble. If you have experience with this, please contribute.)
 * Install the [nuget package](https://www.nuget.org/packages/ShapeControl.Forms/) in portable and all platform specific projects.
-* This plugin uses the [MediaPlugin](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md). Be sure to complete the full setup this plugin. Please fully read through the [Current Activity Plugin Documentation](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md).
+* This plugin uses the [MediaPlugin](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md). Be sure to complete the full setup this plugin. Please fully read through the [MediaPlugin description](https://github.com/jamesmontemagno/MediaPlugin/blob/master/README.md).
 
 #### Android
 
