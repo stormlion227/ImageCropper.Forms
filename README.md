@@ -22,7 +22,7 @@ Supports Android, iOS.
 
 ## Screen-Shots
 
-<img src="ScreenShots/IMG_0001.PNG"/>
+<img src="ScreenShots/IMG_0001.png"/>
 
 ## Usage
 
