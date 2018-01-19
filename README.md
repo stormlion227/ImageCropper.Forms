@@ -18,10 +18,10 @@ Supports Android and iOS.
 ## Screen-Shots
 
 ### Android
-<img src="ScreenShots/Android_Rectangle.gif"/> <img src="ScreenShots/Android_Circle.gif"/>
+<img src="ScreenShots/Android_Rectangle.gif" alt="Crop/Rotate image(Rectangle/Android)"/> <img src="ScreenShots/Android_Circle.gif" alt="Crop/Rotate image(Circle/Android)"/>
 
 ### iOS
-<img src="ScreenShots/iOS_Rectangle.gif"/> <img src="ScreenShots/iOS_Circle.gif"/>
+<img src="ScreenShots/iOS_Rectangle.gif" alt="Crop/Rotate image(Rectangle/iOS)"/> <img src="ScreenShots/iOS_Circle.gif" alt="Crop/Rotate image(Circle/iOS)" />
 
 ## Usage
 
