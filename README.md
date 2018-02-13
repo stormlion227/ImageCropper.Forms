@@ -37,12 +37,12 @@ Add the following to your AndroidManifest.xml inside the <application> tags:
 	          android:theme="@style/Base.Theme.AppCompat"/>	
 
 In MainActivity.cs file:
-```
+```cs
     Stormlion.ImageCropper.Droid.Platform.Init();
 
     global::Xamarin.Forms.Forms.Init(this, bundle);
 ```
-```
+```cs
     protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
     {
         base.OnActivityResult(requestCode, resultCode, data);
@@ -55,13 +55,13 @@ In MainActivity.cs file:
 
 In AppDelegate.cs file:
 
-```
+```cs
     Stormlion.ImageCropper.iOS.Platform.Init();
 ```
 ## Usage
 
 ### Show ImageCropper page.
-```
+```cs
     new ImageCropper()
     {
         Success = (imageFile) =>
@@ -74,7 +74,7 @@ In AppDelegate.cs file:
     }.Show(this);
 ```
 ### Show it with additional parameters.
-```
+```cs
     new ImageCropper()
     {
         PageTitle = "Test Title",
@@ -91,7 +91,7 @@ In AppDelegate.cs file:
     }.Show(this);
 ```
 ### Show it with a image
-```
+```cs
     new ImageCropper()
     {
         Success = (imageFile) =>
