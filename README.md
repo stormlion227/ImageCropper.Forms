@@ -32,9 +32,10 @@ Supports Android and iOS.
 ### Android
 
 Add the following to your AndroidManifest.xml inside the <application> tags:
-	
+```xml	
 	<activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
 	          android:theme="@style/Base.Theme.AppCompat"/>	
+```
 
 In MainActivity.cs file:
 ```cs
