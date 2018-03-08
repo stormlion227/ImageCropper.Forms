@@ -68,7 +68,6 @@ namespace Stormlion.ImageCropper.iOS
             NSError err = null;
             if (imgData.Save(jpgFilename, false, out err))
             {
-                Debug.WriteLine("saved as " + jpgFilename);
                 imageCropper.Success?.Invoke(jpgFilename);
             }
             else

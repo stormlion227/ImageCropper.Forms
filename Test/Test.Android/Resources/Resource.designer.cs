@@ -4211,26 +4211,26 @@ namespace Test.Droid
 			// aapt resource value: 0x7f0a003c
 			public const int crop_image_activity_no_permissions = 2131361852;
 			
-			// aapt resource value: 0x7f0a0044
-			public const int crop_image_activity_title = 2131361860;
-			
 			// aapt resource value: 0x7f0a003d
-			public const int crop_image_menu_crop = 2131361853;
+			public const int crop_image_activity_title = 2131361853;
 			
 			// aapt resource value: 0x7f0a003e
-			public const int crop_image_menu_flip = 2131361854;
+			public const int crop_image_menu_crop = 2131361854;
 			
 			// aapt resource value: 0x7f0a003f
-			public const int crop_image_menu_flip_horizontally = 2131361855;
+			public const int crop_image_menu_flip = 2131361855;
 			
 			// aapt resource value: 0x7f0a0040
-			public const int crop_image_menu_flip_vertically = 2131361856;
+			public const int crop_image_menu_flip_horizontally = 2131361856;
 			
 			// aapt resource value: 0x7f0a0041
-			public const int crop_image_menu_rotate_left = 2131361857;
+			public const int crop_image_menu_flip_vertically = 2131361857;
 			
 			// aapt resource value: 0x7f0a0042
-			public const int crop_image_menu_rotate_right = 2131361858;
+			public const int crop_image_menu_rotate_left = 2131361858;
+			
+			// aapt resource value: 0x7f0a0043
+			public const int crop_image_menu_rotate_right = 2131361859;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int mr_button_content_description = 2131361792;
@@ -4310,8 +4310,8 @@ namespace Test.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int path_password_strike_through = 2131361850;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int pick_image_intent_chooser_title = 2131361859;
+			// aapt resource value: 0x7f0a0044
+			public const int pick_image_intent_chooser_title = 2131361860;
 			
 			// aapt resource value: 0x7f0a0026
 			public const int search_menu_title = 2131361830;

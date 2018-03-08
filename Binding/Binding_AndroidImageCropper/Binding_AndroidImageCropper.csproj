@@ -82,9 +82,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\android-image-cropper-2.5.1.aar" />
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
+    <LibraryProjectZip Include="Jars\android-image-cropper-2.6.0.aar" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
