@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ImageCropper.Forms</id>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
     <authors>Marko Rothstein</authors>
     <owners>Marko Rothstein</owners>
     <projectUrl>https://github.com/stormlion227/ImageCropper.Forms</projectUrl>
@@ -17,6 +17,9 @@
       <group>
         <dependency id="Xamarin.Forms" version="2.5.0"/>
         <dependency id="Xam.Plugin.Media" version="3.1.2" />
+      </group>
+      <group targetFramework="monoandroid">
+        <dependency id="Xamarin.Android.Support.Exif" version="27.0.2" />
       </group>
     </dependencies>
   </metadata>
