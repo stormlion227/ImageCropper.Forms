@@ -112,7 +112,7 @@
       <Name>ImageCropper</Name>
     </ProjectReference>
     <ProjectReference Include="..\Test\Test.csproj">
-      <Project>{2794A097-E3B2-4262-A61D-C935A4F98246}</Project>
+      <Project>{7b7692f4-d2c1-4fe8-b4eb-33c2e25e7c44}</Project>
       <Name>Test</Name>
     </ProjectReference>
   </ItemGroup>
