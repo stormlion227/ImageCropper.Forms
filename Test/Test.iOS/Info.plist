@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Test</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.stormlion.ImageCropperTest</string>
+	<string>com.stormlion.ImageCropper1</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>

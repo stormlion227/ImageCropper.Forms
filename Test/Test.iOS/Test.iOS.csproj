@@ -47,10 +47,10 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: rothstein.marko@yandex.com (XBQ4WMC4B5)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>iOS Team Provisioning Profile: com.stormlion.ImageCropperTest</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: com.stormlion.ImageCropper1</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
