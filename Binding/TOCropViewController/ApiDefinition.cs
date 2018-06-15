@@ -9,6 +9,7 @@ namespace Bind_TOCropViewController
 {
     // @interface TOActivityCroppedImageProvider : UIActivityItemProvider
     [BaseType(typeof(UIActivityItemProvider))]
+    [Protocol]
     interface TOActivityCroppedImageProvider
     {
         // @property (readonly, nonatomic) UIImage * _Nonnull image;
@@ -34,6 +35,7 @@ namespace Bind_TOCropViewController
 
     // @interface TOCroppedImageAttributes : NSObject
     [BaseType(typeof(NSObject))]
+    [Protocol]
     interface TOCroppedImageAttributes
     {
         // @property (readonly, nonatomic) NSInteger angle;
@@ -55,6 +57,7 @@ namespace Bind_TOCropViewController
 
     // @interface TOCropViewControllerTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
     [BaseType(typeof(NSObject))]
+    [Protocol]
     interface TOCropViewControllerTransitioning : IUIViewControllerAnimatedTransitioning
     {
         // @property (assign, nonatomic) BOOL isDismissing;
@@ -118,6 +121,7 @@ namespace Bind_TOCropViewController
 
     // @interface TOCropView : UIView
     [BaseType(typeof(UIView))]
+    [Protocol]
     interface TOCropView
     {
         // @property (readonly, nonatomic, strong) UIImage * _Nonnull image;
@@ -259,6 +263,7 @@ namespace Bind_TOCropViewController
 
     // @interface TOCropToolbar : UIView
     [BaseType(typeof(UIView))]
+    [Protocol]
     interface TOCropToolbar
     {
         // @property (assign, nonatomic) CGFloat statusBarHeightInset;
@@ -369,6 +374,7 @@ namespace Bind_TOCropViewController
     // @protocol TOCropViewControllerDelegate <NSObject>
     [Model]
     [BaseType(typeof(NSObject))]
+    [Protocol]
     interface TOCropViewControllerDelegate
     {
         // @optional -(void)cropViewController:(TOCropViewController * _Nonnull)cropViewController didCropImageToRect:(CGRect)cropRect angle:(NSInteger)angle;
@@ -390,6 +396,7 @@ namespace Bind_TOCropViewController
 
     // @interface TOCropViewController : UIViewController
     [BaseType(typeof(UIViewController))]
+    [Protocol]
     interface TOCropViewController
     {
         // @property (readonly, nonatomic) UIImage * _Nonnull image;
@@ -540,6 +547,7 @@ namespace Bind_TOCropViewController
 
     // @interface TOCropOverlayView : UIView
     [BaseType(typeof(UIView))]
+    [Protocol]
     interface TOCropOverlayView
     {
         // @property (assign, nonatomic) BOOL gridHidden;
@@ -561,6 +569,7 @@ namespace Bind_TOCropViewController
 
     // @interface TOCropScrollView : UIScrollView
     [BaseType(typeof(UIScrollView))]
+    [Protocol]
     interface TOCropScrollView
     {
         // @property (copy, nonatomic) void (^ _Nullable)(void) touchesBegan;
