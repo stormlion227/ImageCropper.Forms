@@ -21,14 +21,28 @@ namespace Test
             CrossMedia.Current.Initialize();
         }
 
-        protected async void OnClickedShow(object sender, EventArgs e)
+        protected async void OnClickedRectangle(object sender, EventArgs e)
         {
             new ImageCropper()
             {
 //                PageTitle = "Test Title",
 //                AspectRatioX = 1,
 //                AspectRatioY = 1,
-//                CropShape = ImageCropper.CropShapeType.Oval,
+                Success = (imageFile) =>
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        imageView.Source = ImageSource.FromFile(imageFile);
+                    });
+                }
+            }.Show(this);
+        }
+
+        private void OnClickedCircle(object sender, EventArgs e)
+        {
+            new ImageCropper()
+            {
+                CropShape = ImageCropper.CropShapeType.Oval,
                 Success = (imageFile) =>
                 {
                     Device.BeginInvokeOnMainThread(() =>

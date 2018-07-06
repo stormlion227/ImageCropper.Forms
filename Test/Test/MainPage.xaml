@@ -4,8 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Test">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <Button Clicked="OnClickedShow" Text="Show" />
+        <StackLayout Padding="20,40,20,20" Orientation="Vertical">
+            <Button Clicked="OnClickedRectangle" Text="Rectangle" />
+            <Button Clicked="OnClickedCircle" Text="Circle" />
             <Image x:Name="imageView"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand" />
