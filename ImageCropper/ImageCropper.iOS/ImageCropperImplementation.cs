@@ -5,7 +5,6 @@ using Plugin.Media.Abstractions;
 using Stormlion.ImageCropper.iOS;
 using System;
 using System.Diagnostics;
-using System.IO;
 using UIKit;
 using Xamarin.Forms;
 
@@ -61,12 +60,15 @@ namespace Stormlion.ImageCropper.iOS
             }
         }
 
-        void Finalize(ImageCropper imageCropper, UIImage image)
+        private static async void Finalize(ImageCropper imageCropper, UIImage image)
         {
             string documentsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string jpgFilename = System.IO.Path.Combine(documentsDirectory, Guid.NewGuid().ToString() + ".jpg");
             NSData imgData = image.AsJPEG();
-            NSError err = null;
+            NSError err;
+
+            // small delay
+            await System.Threading.Tasks.Task.Delay(TimeSpan.FromMilliseconds(100));
             if (imgData.Save(jpgFilename, false, out err))
             {
                 imageCropper.Success?.Invoke(jpgFilename);

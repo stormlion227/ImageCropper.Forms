@@ -85,6 +85,8 @@ namespace Stormlion.ImageCropper
                 imageFile = file.Path;
             }
 
+            // small delay
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
             DependencyService.Get<IImageCropperWrapper>().ShowFromFile(this, imageFile);
         }
     }
