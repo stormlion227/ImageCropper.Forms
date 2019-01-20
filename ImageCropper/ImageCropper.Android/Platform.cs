@@ -1,5 +1,4 @@
 ﻿using Com.Theartofdev.Edmodo.Cropper;
-
 using Android.App;
 using Android.Content;
 using Xamarin.Forms;
@@ -10,7 +9,7 @@ namespace Stormlion.ImageCropper.Droid
     {
         public static void Init()
         {
-            DependencyService.Register<ImageCropperImplementation>();
+            DependencyService.Register<IImageCropperWrapper, ImageCropperImplementation>();
         }
 
         public static void OnActivityResult(int requestCode, Result resultCode, Intent data)

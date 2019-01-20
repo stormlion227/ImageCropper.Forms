@@ -9,7 +9,6 @@ using System.IO;
 using UIKit;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(ImageCropperImplementation))]
 namespace Stormlion.ImageCropper.iOS
 {
     public class ImageCropperImplementation : IImageCropperWrapper 

@@ -5,7 +5,6 @@ using System.Diagnostics;
 using Xamarin.Forms;
 using System;
 
-[assembly: Dependency(typeof(ImageCropperImplementation))]
 namespace Stormlion.ImageCropper.Droid
 {
     public class ImageCropperImplementation : IImageCropperWrapper
