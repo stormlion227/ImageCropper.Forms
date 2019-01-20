@@ -81,6 +81,10 @@ In AppDelegate.cs file:
         AspectRatioX = 1,
         AspectRatioY = 1,
 	CropShape = ImageCropper.CropShapeType.Oval,
+	SelectSourceTitle = "Select source",
+	TakePhotoTitle = "Take Photo",
+	PhotoLibraryTitle = "Photo Library",
+	CancelButtonTitle = "Cancel",
         Success = (imageFile) =>
         {
             Device.BeginInvokeOnMainThread(() =>
