@@ -35,6 +35,8 @@ namespace Stormlion.ImageCropper
 
         public string PhotoLibraryTitle { get; set; } = "Photo Library";
 
+        public string CancelButtonTitle { get; set; } = "Cancel";
+
         public Action<string> Success { get; set; }
 
         public Action Faiure { get; set; }
@@ -47,7 +49,7 @@ namespace Stormlion.ImageCropper
 
                 MediaFile file;
 
-                string action = await page.DisplayActionSheet(SelectSourceTitle, "Cancel", null, TakePhotoTitle, PhotoLibraryTitle);
+                string action = await page.DisplayActionSheet(SelectSourceTitle, CancelButtonTitle, null, TakePhotoTitle, PhotoLibraryTitle);
                 if (action == TakePhotoTitle)
                 {
                     if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -85,6 +87,8 @@ namespace Stormlion.ImageCropper
                 imageFile = file.Path;
             }
 
+            // small delay
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
             DependencyService.Get<IImageCropperWrapper>().ShowFromFile(this, imageFile);
         }
     }

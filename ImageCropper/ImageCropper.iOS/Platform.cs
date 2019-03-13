@@ -7,7 +7,7 @@ namespace Stormlion.ImageCropper.iOS
     {
         public static void Init()
         {
-            DependencyService.Register<ImageCropperImplementation>();
+            DependencyService.Register<IImageCropperWrapper, ImageCropperImplementation>();
         }
     }
 }
