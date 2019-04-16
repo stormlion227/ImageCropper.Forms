@@ -107,6 +107,8 @@ In AppDelegate.cs file:
         }
     }.Show(this, imageFileName);
 ```
+### Get byte[] from image file
+var imageBytes = ImageCropper.Current.GetBytes(imageFile: imageFile);
 ### Properties
 * PageTitle
 * AspectRatioX
