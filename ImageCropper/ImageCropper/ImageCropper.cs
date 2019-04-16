@@ -91,5 +91,10 @@ namespace Stormlion.ImageCropper
             await Task.Delay(TimeSpan.FromMilliseconds(100));
             DependencyService.Get<IImageCropperWrapper>().ShowFromFile(this, imageFile);
         }
+
+        public byte[] GetBytes(string imageFile)
+        {
+            return DependencyService.Get<IImageCropperWrapper>().GetBytes(imageFile);
+        }
     }
 }

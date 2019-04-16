@@ -60,6 +60,13 @@ namespace Stormlion.ImageCropper.iOS
             }
         }
 
+        public byte[] GetBytes(string imageFile)
+        {
+            var documentsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var filePath = System.IO.Path.Combine(documentsDirectory, imageFile);
+            return System.IO.File.ReadAllBytes(filePath);
+        }
+
         private static async void Finalize(ImageCropper imageCropper, UIImage image)
         {
             string documentsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);

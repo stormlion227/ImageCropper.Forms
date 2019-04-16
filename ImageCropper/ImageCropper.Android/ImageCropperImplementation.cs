@@ -47,5 +47,12 @@ namespace Stormlion.ImageCropper.Droid
             }
             
         }
+
+        public byte[] GetBytes(string imageFile)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var filePath = System.IO.Path.Combine(documentsPath, imageFile);
+            return System.IO.File.ReadAllBytes(filePath);
+        }
     }
 }
