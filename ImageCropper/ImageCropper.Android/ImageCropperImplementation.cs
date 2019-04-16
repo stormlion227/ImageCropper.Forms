@@ -1,8 +1,6 @@
 ﻿using Com.Theartofdev.Edmodo.Cropper;
 using Plugin.CurrentActivity;
-using Stormlion.ImageCropper.Droid;
 using System.Diagnostics;
-using Xamarin.Forms;
 using System;
 
 namespace Stormlion.ImageCropper.Droid
@@ -13,7 +11,7 @@ namespace Stormlion.ImageCropper.Droid
         {
             try
             {
-                CropImage.ActivityBuilder activityBuilder = CropImage.Activity(Android.Net.Uri.FromFile(new Java.IO.File(imageFile)));
+                CropImage.ActivityBuilder activityBuilder = CropImage.Builder(Android.Net.Uri.FromFile(new Java.IO.File(imageFile)));
 
                 if(imageCropper.CropShape == ImageCropper.CropShapeType.Oval)
                 {

@@ -47,10 +47,6 @@
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Binding\Binding_AndroidImageCropper\Binding_AndroidImageCropper.csproj">
-      <Project>{88654249-5226-44d1-a3d2-952e38a178db}</Project>
-      <Name>Binding_AndroidImageCropper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ImageCropper\ImageCropper.csproj">
       <Project>{93f1186d-ac71-47ac-a40e-b43ca82eb57b}</Project>
       <Name>ImageCropper</Name>
@@ -203,6 +199,9 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.3.4.0.1009999\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="XamarinAndroidImageCropper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XamarinAndroidImageCropper.2.5.1\lib\MonoAndroid\XamarinAndroidImageCropper.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

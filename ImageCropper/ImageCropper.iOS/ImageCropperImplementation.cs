@@ -1,12 +1,9 @@
-﻿using Bind_TOCropViewController;
-using CoreGraphics;
+﻿using CoreGraphics;
 using Foundation;
-using Plugin.Media.Abstractions;
-using Stormlion.ImageCropper.iOS;
 using System;
 using System.Diagnostics;
 using UIKit;
-using Xamarin.Forms;
+using Xamarin.TOCropView;
 
 namespace Stormlion.ImageCropper.iOS
 {
