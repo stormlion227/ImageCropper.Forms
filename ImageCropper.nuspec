@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>ImageCropper.Forms.Fix</id>
+    <id>ImageCropper.Forms.Fix.v2</id>
     <version>0.2.1</version>
     <authors>Marko Rothstein</authors>
     <owners>Marko Rothstein</owners>
-    <projectUrl>https://github.com/stormlion227/ImageCropper.Forms</projectUrl>
-    <licenseUrl>https://github.com/stormlion227/ImageCropper.Forms/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/INHack20/ImageCropper.Forms</projectUrl>
+    <licenseUrl>https://github.com/INHack20/ImageCropper.Forms/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Xamarin.Forms plugin to crop and rotate photos.</description>
     <summary>Xamarin.Forms plugin to crop and rotate photos. Supports Android and iOS.</summary>
