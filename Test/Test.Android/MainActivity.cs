@@ -9,6 +9,7 @@ using Android.OS;
 using Stormlion.ImageCropper.Droid;
 using Plugin.Permissions;
 using Android.Content;
+using Plugin.CurrentActivity;
 
 namespace Test.Droid
 {
@@ -21,8 +22,10 @@ namespace Test.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             Platform.Init();
+            CrossCurrentActivity.Current.Init(this, bundle);
 
             base.OnCreate(bundle);
+            Xamarin.Essentials.Platform.Init(this, bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
@@ -31,6 +34,8 @@ namespace Test.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
