@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Plugin.CurrentActivity;
 
 namespace Test.Droid
 {
@@ -28,7 +27,6 @@ namespace Test.Droid
         public override void OnCreate()
         {
             base.OnCreate();
-            CrossCurrentActivity.Current.Init(this);
         }
     }
 }

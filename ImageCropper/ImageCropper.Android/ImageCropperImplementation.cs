@@ -1,9 +1,9 @@
 ﻿using Com.Theartofdev.Edmodo.Cropper;
-using Plugin.CurrentActivity;
 using Stormlion.ImageCropper.Droid;
 using System.Diagnostics;
 using Xamarin.Forms;
 using System;
+using Xamarin.Essentials;
 
 namespace Stormlion.ImageCropper.Droid
 {
@@ -39,7 +39,7 @@ namespace Stormlion.ImageCropper.Droid
                     activityBuilder.SetActivityTitle(imageCropper.PageTitle);
                 }
 
-                activityBuilder.Start(CrossCurrentActivity.Current.Activity);
+                activityBuilder.Start(Xamarin.Essentials.Platform.CurrentActivity);
             }
             catch(Exception ex)
             {

@@ -9,7 +9,6 @@ using Android.OS;
 using Stormlion.ImageCropper.Droid;
 using Plugin.Permissions;
 using Android.Content;
-using Plugin.CurrentActivity;
 
 namespace Test.Droid
 {
@@ -22,7 +21,6 @@ namespace Test.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             Platform.Init();
-            CrossCurrentActivity.Current.Init(this, bundle);
 
             base.OnCreate(bundle);
             Xamarin.Essentials.Platform.Init(this, bundle);
