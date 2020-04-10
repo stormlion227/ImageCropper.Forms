@@ -41,6 +41,13 @@ namespace Stormlion.ImageCropper
 
         public Action Faiure { get; set; }
 
+        public PickMediaOptions PickMediaOptions { get; set; } = new PickMediaOptions
+        {
+            PhotoSize = PhotoSize.Large,
+        };
+
+        public StoreCameraMediaOptions StoreCameraMediaOptions { get; set; } = new StoreCameraMediaOptions();
+
         public async void Show(Page page, string imageFile = null)
         {
             if(imageFile == null)
@@ -59,7 +66,7 @@ namespace Stormlion.ImageCropper
                         return;
                     }
 
-                     file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions());
+                     file = await CrossMedia.Current.TakePhotoAsync(StoreCameraMediaOptions);
                 }
                 else if(action == PhotoLibraryTitle)
                 {
@@ -69,8 +76,7 @@ namespace Stormlion.ImageCropper
                         Faiure?.Invoke();
                         return;
                     }
-
-                    file = await CrossMedia.Current.PickPhotoAsync();
+                    file = await CrossMedia.Current.PickPhotoAsync(PickMediaOptions);
                 }
                 else
                 {
