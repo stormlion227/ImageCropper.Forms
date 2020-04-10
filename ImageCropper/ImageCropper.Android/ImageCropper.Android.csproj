@@ -66,7 +66,7 @@
       <Version>2.1.0.4</Version>
     </PackageReference>
     <PackageReference Include="Plugin.Permissions">
-      <Version>3.0.0.12</Version>
+      <Version>6.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>5.0.1</Version>
@@ -80,6 +80,6 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>4.4.0.991265</Version>
     </PackageReference>
-  <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.2" /></ItemGroup>
+  <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.4" /></ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
