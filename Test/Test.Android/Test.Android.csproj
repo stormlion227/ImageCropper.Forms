@@ -27,6 +27,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,7 +59,7 @@
     <PackageReference Include="Xamarin.AndroidX.ExifInterface">
       <Version>1.1.0</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.725" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.1.0-rc3" />
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.1.0" />
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0" />
@@ -67,7 +68,7 @@
     <PackageReference Include="Plugin.Permissions">
       <Version>6.0.1</Version>
     </PackageReference>
-  <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.4" />  <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData">
+  <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.6" />  <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData">
     <Version>2.2.0</Version>
   </PackageReference>
 </ItemGroup>
@@ -99,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Binding\Binding_AndroidImageCropper\Binding_AndroidImageCropper.csproj">
-      <Project>{88654249-5226-44d1-a3d2-952e38a178db}</Project>
+      <Project>{0D5DDAB1-E51D-4169-A1F5-18F2F5E27C19}</Project>
       <Name>Binding_AndroidImageCropper</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ImageCropper\ImageCropper.Android\ImageCropper.Android.csproj">

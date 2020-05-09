@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ImageCropper.Forms.Fix.v2</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>Marko Rothstein</authors>
     <owners>Marko Rothstein</owners>
     <projectUrl>https://github.com/INHack20/ImageCropper.Forms</projectUrl>
@@ -19,8 +19,8 @@
         <dependency id="Xam.Plugin.Media" version="5.0.1" />
       </group>
       <group targetFramework="monoandroid">
-        <dependency id="Xamarin.Android.Support.Exif" version="28.0.0.3" />
-        <dependency id="Xamarin.AndroidX.Migration" version="1.0.4" />
+        <dependency id="Xamarin.AndroidX.ExifInterface" version="1.1.0" />
+        <dependency id="Xamarin.AndroidX.Migration" version="1.0.6" />
       </group>
     </dependencies>
   </metadata>
