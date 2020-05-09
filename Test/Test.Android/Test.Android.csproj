@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Binding\Binding_AndroidImageCropper\Binding_AndroidImageCropper.csproj">
-      <Project>{88654249-5226-44d1-a3d2-952e38a178db}</Project>
+      <Project>{0D5DDAB1-E51D-4169-A1F5-18F2F5E27C19}</Project>
       <Name>Binding_AndroidImageCropper</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ImageCropper\ImageCropper.Android\ImageCropper.Android.csproj">
