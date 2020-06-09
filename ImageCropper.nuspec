@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ImageCropper.Forms.Fix.v2</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <authors>Marko Rothstein</authors>
     <owners>Marko Rothstein</owners>
     <projectUrl>https://github.com/INHack20/ImageCropper.Forms</projectUrl>
@@ -15,12 +15,12 @@
     <tags>xamarin forms crop rotate photo image</tags>
     <dependencies>
       <group>
-        <dependency id="Xamarin.Forms" version="4.4.0"/>
-        <dependency id="Xam.Plugin.Media" version="5.0.1" />
+        <dependency id="Xamarin.Forms" version="4.4"/>
+        <dependency id="Xam.Plugin.Media" version="5.0" />
       </group>
       <group targetFramework="monoandroid">
-        <dependency id="Xamarin.AndroidX.ExifInterface" version="1.1.0" />
-        <dependency id="Xamarin.AndroidX.Migration" version="1.0.6" />
+        <dependency id="Xamarin.AndroidX.ExifInterface" version="1.1" />
+        <dependency id="Xamarin.AndroidX.Migration" version="1.0" />
       </group>
     </dependencies>
   </metadata>
