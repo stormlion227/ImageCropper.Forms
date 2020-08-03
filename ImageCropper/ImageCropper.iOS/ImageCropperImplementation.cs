@@ -1,12 +1,9 @@
-﻿using Bind_TOCropViewController;
-using CoreGraphics;
+﻿using CoreGraphics;
 using Foundation;
-using Plugin.Media.Abstractions;
-using Stormlion.ImageCropper.iOS;
 using System;
 using System.Diagnostics;
 using UIKit;
-using Xamarin.Forms;
+using Xamarin.TOCropView;
 
 namespace Stormlion.ImageCropper.iOS
 {
@@ -58,6 +55,13 @@ namespace Stormlion.ImageCropper.iOS
                 UILabel titleLabel = cropViewController.TitleLabel;
                 titleLabel.Text = imageCropper.PageTitle;
             }
+        }
+
+        public byte[] GetBytes(string imageFile)
+        {
+            var documentsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var filePath = System.IO.Path.Combine(documentsDirectory, imageFile);
+            return System.IO.File.ReadAllBytes(filePath);
         }
 
         private static async void Finalize(ImageCropper imageCropper, UIImage image)
