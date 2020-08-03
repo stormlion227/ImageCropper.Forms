@@ -43,13 +43,13 @@ namespace Stormlion.ImageCropper
 
         public async void Show(Page page, string imageFile = null)
         {
-            if(imageFile == null)
+            MediaFile file = null;
+            if (imageFile == null)
             {
                 await CrossMedia.Current.Initialize();
 
-                MediaFile file;
-
-                string action = await page.DisplayActionSheet(SelectSourceTitle, CancelButtonTitle, null, TakePhotoTitle, PhotoLibraryTitle);
+                string action = await page.DisplayActionSheet(SelectSourceTitle, CancelButtonTitle, null,
+                    TakePhotoTitle, PhotoLibraryTitle);
                 if (action == TakePhotoTitle)
                 {
                     if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -59,18 +59,23 @@ namespace Stormlion.ImageCropper
                         return;
                     }
 
-                     file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions());
+                    file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                    {
+                        CompressionQuality = 100, DefaultCamera = CameraDevice.Rear, SaveMetaData = true,
+                        SaveToAlbum = true
+                    });
                 }
-                else if(action == PhotoLibraryTitle)
+                else if (action == PhotoLibraryTitle)
                 {
-                    if(!CrossMedia.Current.IsPickPhotoSupported)
+                    if (!CrossMedia.Current.IsPickPhotoSupported)
                     {
                         await page.DisplayAlert("Error", "This device is not supported to pick photo.", "OK");
                         Faiure?.Invoke();
                         return;
                     }
 
-                    file = await CrossMedia.Current.PickPhotoAsync();
+                    file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                        {SaveMetaData = true, CompressionQuality = 100});
                 }
                 else
                 {
@@ -90,6 +95,14 @@ namespace Stormlion.ImageCropper
             // small delay
             await Task.Delay(TimeSpan.FromMilliseconds(100));
             DependencyService.Get<IImageCropperWrapper>().ShowFromFile(this, imageFile);
+
+            // dispose media file
+            file?.Dispose();
+        }
+
+        public byte[] GetBytes(string imageFile)
+        {
+            return DependencyService.Get<IImageCropperWrapper>().GetBytes(imageFile);
         }
     }
 }

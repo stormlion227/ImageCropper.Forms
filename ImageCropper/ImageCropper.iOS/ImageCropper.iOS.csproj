@@ -43,6 +43,9 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="TOCropViewController, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.TOCropView.1.1.0\lib\xamarinios10\TOCropViewController.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.3.4.0.1009999\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
@@ -66,10 +69,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Binding\TOCropViewController\TOCropViewController.csproj">
-      <Project>{c5dcb26a-02d0-4d8b-878e-c9169915c22a}</Project>
-      <Name>TOCropViewController</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ImageCropper\ImageCropper.csproj">
       <Project>{93f1186d-ac71-47ac-a40e-b43ca82eb57b}</Project>
       <Name>ImageCropper</Name>
