@@ -21,6 +21,7 @@ namespace Stormlion.ImageCropper
             Oval
         };
 
+
         public CropShapeType CropShape { get; set; } = CropShapeType.Rectangle;
 
         public int AspectRatioX { get; set; } = 0;
@@ -36,6 +37,8 @@ namespace Stormlion.ImageCropper
         public string PhotoLibraryTitle { get; set; } = "Photo Library";
 
         public string CancelButtonTitle { get; set; } = "Cancel";
+        public PhotoSize ImageSize { get; set; } = PhotoSize.Full;
+        public int ImageCompressionQuality { get; set; } = 100;
 
         public Action<string> Success { get; set; }
 
@@ -61,8 +64,8 @@ namespace Stormlion.ImageCropper
 
                     file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                     {
-                        CompressionQuality = 100, DefaultCamera = CameraDevice.Rear, SaveMetaData = true,
-                        SaveToAlbum = true
+                        PhotoSize = ImageSize,
+                        CompressionQuality = ImageCompressionQuality,
                     });
                 }
                 else if (action == PhotoLibraryTitle)
