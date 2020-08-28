@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -62,6 +62,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ExifLib.PCL">
+      <Version>1.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Plugin.Permissions">
       <Version>6.0.1</Version>
     </PackageReference>
@@ -77,6 +80,7 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>4.5.0.725</Version>
     </PackageReference>
-  <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.6" /></ItemGroup>
+    <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.6" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
