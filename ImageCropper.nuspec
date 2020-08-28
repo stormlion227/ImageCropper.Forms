@@ -2,11 +2,11 @@
 <package >
   <metadata>
     <id>ImageCropper.Forms.Fix.MultiPicker</id>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <authors>Marko Rothstein</authors>
     <owners>Marko Rothstein</owners>
     <projectUrl>https://github.com/INHack20/ImageCropper.Forms</projectUrl>
-    <licenseUrl>https://github.com/INHack20/ImageCropper.Forms/blob/master/LICENSE.md</licenseUrl>
+    <license>https://github.com/INHack20/ImageCropper.Forms/blob/master/LICENSE.md</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Xamarin.Forms plugin to crop and rotate photos.</description>
     <summary>Xamarin.Forms plugin to crop and rotate photos taken by the Camera or Picked multiple images from Gallery. Supports Android and iOS.</summary>
