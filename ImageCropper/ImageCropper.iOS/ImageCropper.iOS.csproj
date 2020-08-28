@@ -40,9 +40,6 @@
     <Reference Include="OpenTK-1.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="ImageCropperImplementation.cs" />
     <Compile Include="Platform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,14 +53,6 @@
       <Project>{93f1186d-ac71-47ac-a40e-b43ca82eb57b}</Project>
       <Name>ImageCropper</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Media.xcassets\sample1.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\sample1.imageset\Photo.png">
-      <Visible>false</Visible>
-    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.Permissions">
