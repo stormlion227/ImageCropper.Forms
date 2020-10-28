@@ -141,8 +141,8 @@
   <ItemGroup>
     <None Include="Jars\AboutJars.txt" />
     <None Include="Additions\AboutAdditions.txt" />
-    <LibraryProjectZip Include="Jars\android-image-cropper-2.6.0.aar" />
     <None Include="packages.config" />
+    <LibraryProjectZip Include="Jars\android-image-cropper-2.7.0.aar" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\Metadata.xml" />
