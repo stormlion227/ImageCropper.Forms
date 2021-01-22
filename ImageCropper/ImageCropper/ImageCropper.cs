@@ -36,8 +36,7 @@ namespace Stormlion.ImageCropper
 
         public string PhotoLibraryTitle { get; set; } = "Photo Library";
 
-        public string CancelButtonTitle { get; set; } = "Cancel";
-        
+        public string CancelButtonTitle { get; set; } = "Cancel";        
         public string DestructiveButtonTitle { get; set; } = null;
         public PhotoSize ImageSize { get; set; } = PhotoSize.Full;
         public int ImageCompressionQuality { get; set; } = 100;
