@@ -1,22 +1,15 @@
 ﻿using Plugin.Media;
-using Plugin.Media.Abstractions;
 using Stormlion.ImageCropper;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Test
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
 
             CrossMedia.Current.Initialize();
         }
@@ -25,14 +18,16 @@ namespace Test
         {
             new ImageCropper()
             {
-//                PageTitle = "Test Title",
-//                AspectRatioX = 1,
-//                AspectRatioY = 1,
-                Success = (imageFile) =>
+                //                PageTitle = "Test Title",
+                //                AspectRatioX = 1,
+                //                AspectRatioY = 1,
+                Success = (croppingResultList) =>
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        imageView.Source = ImageSource.FromFile(imageFile);
+                        imageView.Source = ImageSource.FromFile(croppingResultList[0].ImagePath);
+                        string imagePath = croppingResultList[0].ImagePath;
+                        string imageDate = croppingResultList[0].OriginalPictureDate;
                     });
                 }
             }.Show(this);
@@ -43,11 +38,11 @@ namespace Test
             new ImageCropper()
             {
                 CropShape = ImageCropper.CropShapeType.Oval,
-                Success = (imageFile) =>
+                Success = (croppingResultList) =>
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        imageView.Source = ImageSource.FromFile(imageFile);
+                        imageView.Source = ImageSource.FromFile(croppingResultList[0].ImagePath);
                     });
                 }
             }.Show(this);

@@ -23,6 +23,7 @@ namespace Test.Droid
             Platform.Init();
 
             base.OnCreate(bundle);
+            Xamarin.Essentials.Platform.Init(this, bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
@@ -31,6 +32,8 @@ namespace Test.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

@@ -15,19 +15,54 @@ namespace Stormlion.ImageCropper.Droid
 
         public static async void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
-            if (requestCode == CropImage.CropImageActivityRequestCode)
+            if (data == null)
             {
-                CropImage.ActivityResult result = CropImage.GetActivityResult(data);
+                ImageCropper.Current.indexCounter++;
+                return;
+            }
 
-                // small delay
-                await System.Threading.Tasks.Task.Delay(TimeSpan.FromMilliseconds(100));
-                if (resultCode == Result.Ok)
+            else
+            {
+                if (requestCode == CropImage.CropImageActivityRequestCode)
                 {
-                    ImageCropper.Current.Success?.Invoke(result.Uri.Path);
-                }
-                else if ((int)resultCode == (int)(CropImage.CropImageActivityResultErrorCode))
-                {
-                    ImageCropper.Current.Faiure?.Invoke();
+                    string originalFileCreationDate = string.Empty;
+
+                    originalFileCreationDate = ImageCropper.Current.
+                        BeforeCroppingList[ImageCropper.Current.
+                        indexCounter].OriginalPictureDate;
+
+                    CropImage.ActivityResult result = CropImage.GetActivityResult(data);
+
+                    if (result != null)
+                    {
+                        ImageCropper.Current.CroppingResultList.Add(new ImageProperties()
+                        {
+                            ImagePath = result.Uri.Path,
+                            OriginalPictureDate = originalFileCreationDate
+                        });
+
+                        ImageCropper.Current.indexCounter++;
+
+                        // small delay
+                        await System.Threading.Tasks.Task.Delay(TimeSpan.FromMilliseconds(100));
+
+                        if (resultCode == Result.Ok)
+                        {
+                            if (ImageCropper.Current.indexCounter == ImageCropper.Current.BeforeCroppingList.Count)
+                            {
+                                ImageCropper.Current.Success?.Invoke(ImageCropper.Current.CroppingResultList);
+                            }
+                        }
+                        else if ((int)resultCode == (int)(CropImage.CropImageActivityResultErrorCode))
+                        {
+                            ImageCropper.Current.Faiure?.Invoke();
+                        }
+                    }
+                    else
+                    {
+                        ImageCropper.Current.Faiure?.Invoke();
+                        return;
+                    }
                 }
             }
         }
